@@ -45,7 +45,7 @@ app.get('/', (req, res) => {
 })
 
 // New root point
-// Movie information is hard- coded into this object
+// Movie information is hard coded into this object
 app.get('/api/movies', (req, res)=>{
   //  const mymovies = [
   //      {
