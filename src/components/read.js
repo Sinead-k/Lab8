@@ -8,6 +8,21 @@ export class Read extends React.Component {
         movies: []
     };
 
+    constructor(){
+        super();
+        this.ReloadDataMethod = this.ReloadDataMethod.bind(this);
+    }
+
+    ReloadDataMethod(){
+        axios.get('http://localhost:4000/api/movies')
+        .then((response)=>{
+        this.setState({movies: response.data.movies})
+        })
+        .catch((error)=>{
+        console.log(error);
+        });
+    }
+
     componentDidMount() {
         // changed the url to local api
         axios.get('http://localhost:4000/api/movies')
